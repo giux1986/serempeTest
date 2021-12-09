@@ -1,0 +1,26 @@
+RewriteEngine On
+
+
+RewriteRule ^user/login$ index.php [L,QSA,NC]
+RewriteRule ^user/logout?$ logout.php
+
+RewriteRule ^users?$ home/users.php
+RewriteRule ^users/create?$ home/user_new.php
+RewriteRule ^users/([a-zA-Z0-9_-]+)/edit?$   home/user_edit.php?cid=$1 [L,NC]
+RewriteRule ^users/([a-zA-Z0-9_-]+)/delete?$ home/users.php?did=$1 [L,NC]
+
+RewriteRule ^cities?$ home/cities.php
+RewriteRule ^cities/create?$ home/city_new.php
+RewriteRule ^cities/([a-zA-Z0-9_-]+)/edit?$   home/city_edit.php?cid=$1 [L,NC]
+RewriteRule ^cities/([a-zA-Z0-9_-]+)/delete?$ home/cities.php?did=$1 [L,NC]
+
+RewriteRule ^city/ajax/([a-zA-Z0-9_-]+)?$ cities.php?key=$1 [L,NC]
+
+RewriteRule ^clients?$ home/clients.php
+RewriteRule ^clients/create?$ home/client_new.php
+RewriteRule ^clients/([a-zA-Z0-9_-]+)/edit?$   home/client_edit.php?cid=$1 [L,NC]
+RewriteRule ^clients/([a-zA-Z0-9_-]+)/delete?$ home/clients.php?did=$1 [L,NC]
+
+
+
+
